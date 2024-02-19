@@ -54,13 +54,14 @@ export const AvatarUploader = ({ onUpload }: FileUplaodProps) => {
       <div>
         {error && <p className="error">{error}</p>}
         {previewImage && (
-        <Image
-          src={previewImage}
-          alt="Preview"
-          width={50}
-          height={50}
-          className=' rounded-full'
-        />
+        <div className='relative rounded-full w-16 h-16 overflow-hidden border-2 border-black'>
+          <Image 
+            className='rounded-full object-cover p-[0.15rem] pt-[0.15rem]'
+            src={previewImage}
+            fill={true}
+            alt="Preview"
+          />
+        </div>
         )}
       </div>
     </>

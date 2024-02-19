@@ -66,7 +66,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <main className='flex min-h-screen flex-col items-center justify-between p-24 w-screen h-screen'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}
           className="max-w-md w-full flex flex-col gap-4">
