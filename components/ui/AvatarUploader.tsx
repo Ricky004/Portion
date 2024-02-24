@@ -41,7 +41,8 @@ export const AvatarUploader = ({ onUpload }: FileUplaodProps) => {
 
   return (
     <>
-      <div {...getRootProps({ className: 'dropzone' })}
+      {!previewImage ? (
+        <div {...getRootProps({ className: 'dropzone' })}
         className=' bg-gray-200 h-28 flex justify-center items-center text-gray-600 rounded-lg text-sm'>
         <input {...getInputProps()} />
         {
@@ -51,6 +52,7 @@ export const AvatarUploader = ({ onUpload }: FileUplaodProps) => {
             <p>Drag n drop your avatar here, or click to select avatar</p>
           )}
       </div>
+      ) : (
       <div>
         {error && <p className="error">{error}</p>}
         {previewImage && (
@@ -64,6 +66,7 @@ export const AvatarUploader = ({ onUpload }: FileUplaodProps) => {
         </div>
         )}
       </div>
+      )}
     </>
   )
 }

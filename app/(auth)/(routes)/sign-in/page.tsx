@@ -18,7 +18,7 @@ import Link from 'next/link'
 
 const FormSchema = z.object({
   email: z.string().email(),
-  username: z.string(),
+  username: z.string().optional(),
   password: z.string().min(6, {
     message: "Password must be 6 character"
   }),
@@ -83,7 +83,7 @@ export default function LoginForm() {
             name='username'
             render={({ field }) => {
               return <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Username (optional)</FormLabel>
                 <FormControl>
                   <Input
                     disabled={isLoading}
